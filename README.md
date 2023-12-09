@@ -6,6 +6,8 @@ A proof-of-concept for custom feeds in Windows Widgets.
 
 ## Requirements
 ### Enabling the feature
+- A supported version of Widgets.
+  - 523.33200.0.0 seems to be the minimum, but I haven't managed to test older versions.
 - Velocity IDs 44353396 and 45393399 enabled.
 - Device region must be a country within the European Economic Area.
   - To change your region, follow [this tutorial](https://www.neowin.net/guides/how-to-remove-microsoft-edge-from-windows-11-in-the-latest-eea-compliant-update/).

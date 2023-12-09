@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Package
+  xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
+  xmlns:com="http://schemas.microsoft.com/appx/manifest/com/windows10"
+  xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
+  xmlns:uap3="http://schemas.microsoft.com/appx/manifest/uap/windows10/3"
+  xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
+  IgnorableNamespaces="com uap uap3 rescap">
+
+	<Identity
+	  Name="cc203f7c-6c0b-4bc4-b7b0-8ce9ab1b3953"
+	  Publisher="CN=Dongle"
+	  Version="1.0.0.0" />
+
+	<Properties>
+		<DisplayName>Custom Feed Provider (C#)</DisplayName>
+		<PublisherDisplayName>Dongle</PublisherDisplayName>
+		<Logo>Images\StoreLogo.png</Logo>
+	</Properties>
+
+	<Dependencies>
+		<TargetDeviceFamily Name="Windows.Universal" MinVersion="10.0.0.0" MaxVersionTested="10.0.0.0" />
+		<TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.14393.0" MaxVersionTested="10.0.14393.0" />
+		<PackageDependency Name="Microsoft.WindowsAppRuntime.1.5-experimental1" Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US" MinVersion="5000.1066.33.0"/>
+	</Dependencies>
+
+	<Resources>
+		<Resource Language="x-generate"/>
+	</Resources>
+
+	<Applications>
+		<Application Id="App"
+		  Executable="$targetnametoken$.exe"
+		  EntryPoint="$targetentrypoint$">
+			<uap:VisualElements
+			  DisplayName="Custom Feed Provider (C#)"
+			  Description="Custom Feed Provider (C#)"
+			  BackgroundColor="transparent"
+			  Square150x150Logo="Images\Square150x150Logo.png"
+			  Square44x44Logo="Images\Square44x44Logo.png">
+				<uap:DefaultTile Wide310x150Logo="Images\Wide310x150Logo.png" />
+				<uap:SplashScreen Image="Images\SplashScreen.png" />
+			</uap:VisualElements>
+
+			<Extensions>
+				<uap3:Extension Category="windows.appExtension">
+					<uap3:AppExtension Name="com.microsoft.windows.widgets.feeds" DisplayName="Custom Feed Provider (C#)" Id="com.dongle.customFeedProviderCs" PublicFolder="Public">
+						<uap3:Properties>
+							<FeedProvider SettingsUri="https://www.roundadorner.tk" Icon="Images\FeedLogo.png" Description="This is a non-functional feed.">
+								<Activation>
+									<CreateInstance ClassId="50F82A28-5EAD-4E04-BF8A-72EA4CA3D73C" />
+								</Activation>
+								<Definitions>
+									<Definition Id="com.dongle.customFeedCs" DisplayName="Custom Feed (C#)" Description="This is a non-functional feed." ContentUri="https://www.roundadorner.tk/blog" Icon="Images\FeedLogo.png"></Definition>
+								</Definitions>
+							</FeedProvider>
+						</uap3:Properties>
+					</uap3:AppExtension>
+				</uap3:Extension>
+
+				<com:Extension xmlns:com="http://schemas.microsoft.com/appx/manifest/com/windows10" Category="windows.comServer">
+					<com:ComServer>
+						<com:ExeServer Executable="CustomFeedCS.exe" Arguments="-RegisterProcessAsComServer" DisplayName="CustomFeedProviderCOMServerCS">
+							<com:Class Id="50F82A28-5EAD-4E04-BF8A-72EA4CA3D73C" DisplayName="FeedProviderFactoryCS" />
+						</com:ExeServer>
+					</com:ComServer>
+				</com:Extension>
+			</Extensions>
+		</Application>
+	</Applications>
+
+	<Capabilities>
+		<rescap:Capability Name="runFullTrust" />
+	</Capabilities>
+</Package>

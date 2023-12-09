@@ -10,6 +10,10 @@ A proof-of-concept for custom feeds in Windows Widgets.
 - Device region must be a country within the European Economic Area.
   - To change your region, follow [this tutorial](https://www.neowin.net/guides/how-to-remove-microsoft-edge-from-windows-11-in-the-latest-eea-compliant-update/).
 ### Building the POC
-- Visual Studio 2022 with the "Desktop development with C++" and "Universal Windows Platform development" workloads installed.
+- Visual Studio 2022
+  - Required workflows:
+    - Universal Windows Platform development
+    - Desktop development with C++ (for the C++ sample)
+    - .NET desktop development and Windows App SDK C# templates component (for the C# sample)
 - Windows SDK version 22621
 - [Windows App SDK 1.5 Experimental 1 framework package](docs/resources/MSIX) installed.

@@ -14,7 +14,7 @@
 	  Version="1.0.0.0" />
 
 	<Properties>
-		<DisplayName>CustomFeedProvider (Package)</DisplayName>
+		<DisplayName>Custom Feed Provider (C++)</DisplayName>
 		<PublisherDisplayName>Dongle</PublisherDisplayName>
 		<Logo>Images\StoreLogo.png</Logo>
 	</Properties>
@@ -34,8 +34,8 @@
 		  Executable="$targetnametoken$.exe"
 		  EntryPoint="$targetentrypoint$">
 			<uap:VisualElements
-			  DisplayName="CustomFeedProvider (Package)"
-			  Description="CustomFeedProvider (Package)"
+			  DisplayName="Custom Feed Provider (C++)"
+			  Description="Custom Feed Provider (C++)"
 			  BackgroundColor="transparent"
 			  Square150x150Logo="Images\Square150x150Logo.png"
 			  Square44x44Logo="Images\Square44x44Logo.png">
@@ -45,14 +45,14 @@
 
 			<Extensions>
 				<uap3:Extension Category="windows.appExtension">
-					<uap3:AppExtension Name="com.microsoft.windows.widgets.feeds" DisplayName="Custom Feed Provider" Id="com.dongle.customFeedProvider" PublicFolder="Public">
+					<uap3:AppExtension Name="com.microsoft.windows.widgets.feeds" DisplayName="Custom Feed Provider (C++)" Id="com.dongle.customFeedProviderCpp" PublicFolder="Public">
 						<uap3:Properties>
 							<FeedProvider SettingsUri="https://www.roundadorner.tk" Icon="Images\FeedLogo.png" Description="This is a non-functional feed.">
 								<Activation>
 									<CreateInstance ClassId="606dbaa8-4054-4865-8ddf-4d518a770a4c" />
 								</Activation>
 								<Definitions>
-									<Definition Id="com.dongle.customFeed" DisplayName="Custom Feed" Description="This is a non-functional feed." ContentUri="https://www.roundadorner.tk/blog" Icon="Images\FeedLogo.png"></Definition>
+									<Definition Id="com.dongle.customFeedCpp" DisplayName="Custom Feed (C++)" Description="This is a non-functional feed." ContentUri="https://www.roundadorner.tk/blog" Icon="Images\FeedLogo.png"></Definition>
 								</Definitions>
 							</FeedProvider>
 						</uap3:Properties>
@@ -61,8 +61,8 @@
 
 				<com:Extension xmlns:com="http://schemas.microsoft.com/appx/manifest/com/windows10" Category="windows.comServer">
 					<com:ComServer>
-						<com:ExeServer Executable="CustomFeedProvider.exe" Arguments="-RegisterProcessAsComServer" DisplayName="CustomFeedProviderCOMServer">
-							<com:Class Id="606dbaa8-4054-4865-8ddf-4d518a770a4c" DisplayName="FeedProviderFactory" />
+						<com:ExeServer Executable="CustomFeedCpp.exe" Arguments="-RegisterProcessAsComServer" DisplayName="CustomFeedProviderCOMServer">
+							<com:Class Id="606dbaa8-4054-4865-8ddf-4d518a770a4c" DisplayName="CppFeedProviderFactory" />
 						</com:ExeServer>
 					</com:ComServer>
 				</com:Extension>

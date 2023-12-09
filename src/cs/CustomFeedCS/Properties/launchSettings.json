@@ -1,0 +1,7 @@
+{
+  "profiles": {
+    "CustomFeedCS (Package)": {
+      "commandName": "MsixPackage"
+    }
+  }
+}

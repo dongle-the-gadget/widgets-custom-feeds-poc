@@ -45,14 +45,14 @@
 
 			<Extensions>
 				<uap3:Extension Category="windows.appExtension">
-					<uap3:AppExtension Name="com.microsoft.windows.widgets.feeds" DisplayName="Custom Feed" Id="com.dongle.customFeedProvider" PublicFolder="Public">
+					<uap3:AppExtension Name="com.microsoft.windows.widgets.feeds" DisplayName="Custom Feed Provider" Id="com.dongle.customFeedProvider" PublicFolder="Public">
 						<uap3:Properties>
 							<FeedProvider SettingsUri="https://www.roundadorner.tk" Icon="Images\FeedLogo.png" Description="This is a non-functional feed.">
 								<Activation>
 									<CreateInstance ClassId="606dbaa8-4054-4865-8ddf-4d518a770a4c" />
 								</Activation>
 								<Definitions>
-									<Definition Id="com.dongle.customFeed" DisplayName="Custom Feed" Description="This is a non-functional feed." ContentUri="https://www.roundadorner.tk/blog" AllowMultiple="false" Icon="Images\FeedLogo.png"></Definition>
+									<Definition Id="com.dongle.customFeed" DisplayName="Custom Feed" Description="This is a non-functional feed." ContentUri="https://www.roundadorner.tk/blog" Icon="Images\FeedLogo.png"></Definition>
 								</Definitions>
 							</FeedProvider>
 						</uap3:Properties>

@@ -16,7 +16,7 @@ When a feed provider is enabled, it will:
 3. Call `IFeedProvider.OnFeedProviderEnabled` and `IFeedProvider.OnFeedEnabled`.
 4. Call `IFeedProvider.OnCustomQueryParametersRequested`.
 5. Combining the declared `ContentUri` and the query parameters retrieved from step 4, create a final content URI.
-6. Navigate to that content URI using an `<iframe>` and diplay it.
+6. Navigate to that content URI using an `<iframe>` and display it.
 
 ## APPX app extensions
 Feed providers are declared using APPX app extensions, which are defined in the package's `AppxManifest.xml`. A psuedo implementation would like this:

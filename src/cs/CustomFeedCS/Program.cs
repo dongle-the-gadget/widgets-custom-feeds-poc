@@ -30,6 +30,7 @@ internal partial class Program
         if (args.Length == 0 || args[0] != "-RegisterProcessAsComServer")
         {
             MessageBoxW(0, "The sample should be launched from Widgets", null, 0);
+            return;
         }
 
         providerFactory = new(new FeedProvider());

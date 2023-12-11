@@ -4,6 +4,12 @@
 * text=auto
 
 ###############################################################################
+# Behavior for header files
+# The .h files here are being consumed by C++ and uses C++ syntax.
+###############################################################################
+*.h linguist-language=C++
+
+###############################################################################
 # Set default behavior for command prompt diff.
 #
 # This is need for earlier builds of msysgit that does not have it on by
